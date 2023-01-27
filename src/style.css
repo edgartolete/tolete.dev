@@ -1,0 +1,172 @@
+:root{
+    --color-primary: #78a841;
+    --container-width: 1290px;
+    --color-text: #424242;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap');
+
+
+h1, h2, h3, p, button, a{
+    font-family: 'Oxygen', sans-serif;
+}
+h1, h2, h3, button{
+    font-weight: bold;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+html, body, * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    /* background-color: rgba(0,0,0, 0.1); */
+}
+
+header{
+    padding: 0px 10px;
+    background: white;
+    position: fixed;
+    width: 100%;
+    border-bottom: 2px solid var(--color-primary);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+header > div, section{
+
+    max-width: var(--container-width);
+    margin: auto;
+}
+
+header>div {
+    display: flex;
+    flex-direction: row;
+}
+
+
+header > div a{
+    margin-right: auto;
+}
+
+.menu-icon{
+    display: none;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu-modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-modal > nav{
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-modal > nav > a{
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+}
+
+.menu-modal > nav > a:not(a:last-child){
+    border-bottom: 2px solid var(--color-primary);
+}
+
+
+.menu-modal > svg{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.menu-list{
+   display: flex;
+    flex-direction: row;
+    align-items: center;
+    }
+
+.menu-list a {
+   text-decoration: none;
+   padding: 10px 10px;
+   color: var(--color-text);
+   transition: 300ms;
+}
+
+.menu-list a:not(a:last-child) {
+    border-bottom: 3px solid white;
+}
+.menu-list a:not(a:last-child):hover, nav .active{
+    border-bottom: 3px solid var(--color-primary) !important;
+    color: var(--color-primary) !important;
+}
+
+.menu-list a:last-child{
+    background: var(--color-primary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+/* main{
+    background:rgba(0, 0, 0, 0.1);
+} */
+section{
+    padding-top: 100px;
+    height: 75vh;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    background: white;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-text);
+    color: white;
+    padding: 20px 50px;
+}
+
+footer > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+}
+footer>div>div {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+@media only screen and (max-width: 674px) {
+    .menu-list{
+        display: none;
+    }
+    .menu-icon{
+        display: flex;
+    }
+    footer > div{
+        flex-direction: column;
+    }
+}
