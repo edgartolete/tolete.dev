@@ -2,7 +2,6 @@
 import { cn } from "@/lib/utils";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 
-
 import {
   motion,
   AnimatePresence,
@@ -11,7 +10,7 @@ import {
 } from "motion/react";
 import Image from "next/image";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -232,12 +231,31 @@ export const MobileNavToggle = ({
 };
 
 export const NavbarLogo = () => {
+  const [isDark, setDarkMode] = useState(true);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const darkMode = window.matchMedia("(prefers-color-scheme: dark)");
+
+    setDarkMode(darkMode.matches);
+  }, [setDarkMode]);
+
   return (
     <a
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
       href="#"
     >
-    <Image src="/brand-lg.png" alt="logo" width={131} height={34} />
+      {!isDark ? (
+        <Image src="/brand-lg.png" alt="logo" width={131} height={34} />
+      ) : (
+        <Image
+          src="/brand-lg-darkmode.png"
+          alt="logo"
+          width={131}
+          height={34}
+        />
+      )}
     </a>
   );
 };
