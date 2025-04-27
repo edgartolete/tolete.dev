@@ -15,12 +15,12 @@ import { useState } from "react";
 export function NavbarMenu() {
   const navItems = [
     {
-      name: "Tech Stack",
-      link: "#pricing",
-    },
-    {
       name: "Projects",
       link: "#projects",
+    },
+    {
+      name: "Tech Stack",
+      link: "#pricing",
     },
     {
       name: "Experience",
@@ -31,7 +31,7 @@ export function NavbarMenu() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
  
   return (
-    <div className="fixed w-full h-20">
+    <div className="fixed w-full h-20 z-50 pt-4">
       <Navbar>
         {/* Desktop Navigation */}
         <NavBody>
@@ -73,14 +73,14 @@ export function NavbarMenu() {
                 variant="primary"
                 className="w-full"
               >
-                Login
+                Resume
               </NavbarButton>
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
               >
-                Book a call
+                Schedule a Call
               </NavbarButton>
             </div>
           </MobileNavMenu>
