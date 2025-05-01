@@ -38,8 +38,8 @@ export function NavbarMenu() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary">Resume</NavbarButton>
-            <NavbarButton variant="primary">Book a Call</NavbarButton>
+            <NavbarButton target="_blank" variant="secondary" href="https://1drv.ms/w/c/7768db99836e3a9a/QZo6boOZ22gggHdcCQAAAAAAXfO1iojOXuPGOw">Resume</NavbarButton>
+            <NavbarButton variant="primary" href="#">Book a Call</NavbarButton>
           </div>
         </NavBody>
  
