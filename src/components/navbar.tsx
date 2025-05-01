@@ -18,6 +18,10 @@ export function NavbarMenu() {
       name: "Projects",
       link: "#projects",
     },
+    // {
+    //   name: "Testimonials",
+    //   link: "#testimonials",
+    // },
     {
       name: "Tech Stack",
       link: "#tech-stack",
