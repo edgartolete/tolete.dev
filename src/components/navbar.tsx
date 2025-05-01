@@ -20,7 +20,7 @@ export function NavbarMenu() {
     },
     {
       name: "Tech Stack",
-      link: "#pricing",
+      link: "#tech-stack",
     },
     {
       name: "Experience",
@@ -39,7 +39,7 @@ export function NavbarMenu() {
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
             <NavbarButton variant="secondary">Resume</NavbarButton>
-            <NavbarButton variant="primary">Schedule a Call</NavbarButton>
+            <NavbarButton variant="primary">Book a Call</NavbarButton>
           </div>
         </NavBody>
  
