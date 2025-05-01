@@ -11,7 +11,7 @@ import {
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
- 
+
 export function NavbarMenu() {
   const navItems = [
     {
@@ -27,9 +27,9 @@ export function NavbarMenu() {
       link: "#experience",
     },
   ];
- 
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
- 
+
   return (
     <div className="fixed w-full h-20 z-50 pt-4">
       <Navbar>
@@ -38,11 +38,19 @@ export function NavbarMenu() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton target="_blank" variant="secondary" href="https://1drv.ms/w/c/7768db99836e3a9a/QZo6boOZ22gggHdcCQAAAAAAXfO1iojOXuPGOw">Resume</NavbarButton>
-            <NavbarButton variant="primary" href="#">Book a Call</NavbarButton>
+            <NavbarButton
+              target="_blank"
+              variant="secondary"
+              href="https://1drv.ms/w/c/7768db99836e3a9a/QZo6boOZ22gggHdcCQAAAAAAXfO1iojOXuPGOw"
+            >
+              Resume
+            </NavbarButton>
+            <NavbarButton variant="primary" href="#">
+              Book a Call
+            </NavbarButton>
           </div>
         </NavBody>
- 
+
         {/* Mobile Navigation */}
         <MobileNav>
           <MobileNavHeader>
@@ -52,7 +60,7 @@ export function NavbarMenu() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             />
           </MobileNavHeader>
- 
+
           <MobileNavMenu
             isOpen={isMobileMenuOpen}
             onClose={() => setIsMobileMenuOpen(false)}
@@ -69,6 +77,8 @@ export function NavbarMenu() {
             ))}
             <div className="flex w-full flex-col gap-4">
               <NavbarButton
+                href="https://1drv.ms/w/c/7768db99836e3a9a/QZo6boOZ22gggHdcCQAAAAAAXfO1iojOXuPGOw"
+                target="_blank"
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
@@ -76,6 +86,7 @@ export function NavbarMenu() {
                 Resume
               </NavbarButton>
               <NavbarButton
+                href="#"
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
@@ -86,7 +97,7 @@ export function NavbarMenu() {
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
- 
+
       {/* Navbar */}
     </div>
   );
