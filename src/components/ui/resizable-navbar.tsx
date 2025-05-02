@@ -247,10 +247,11 @@ export const NavbarLogo = () => {
       href="#"
     >
       {!isDark ? (
-        <Image src="/brand-lg.png" alt="logo" width={131} height={34} />
+        <Image src="/brand-lg.png" priority={true} alt="logo" width={131} height={34} />
       ) : (
         <Image
           src="/brand-lg-darkmode.png"
+          priority={true}
           alt="logo"
           width={131}
           height={34}

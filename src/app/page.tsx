@@ -27,15 +27,17 @@ function Header() {
         </div>
         <div className="flex-1/2 flex justify-center items-center">
           <Image
-            src={"/edgar-professional.png"}
+            src={"/edgar-tolete.webp"}
             alt="Edgar Tolete"
+            priority={true}
             width={500}
             height={500}
             className="hidden sm:block"
           />
           <Image
-            src={"/edgar-professional.png"}
+            src={"/edgar-tolete.webp"}
             alt="Edgar Tolete"
+            priority={true}
             width={280}
             height={280}
             className="sm:hidden"
