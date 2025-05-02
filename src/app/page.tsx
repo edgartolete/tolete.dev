@@ -17,7 +17,7 @@ function Header() {
             <br /> Developer
           </h1>
           <p className="mt-6">
-            I enjoy building websites and innovative systems. I like learning
+            I enjoy building websites and innovative reliable systems. I also like learning
             new tools that would make the job done.
           </p>
           <TextGenerateEffect
