@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/resizable-navbar";
 import Link from "next/link";
 import { useState } from "react";
+import { useModal } from "./ui/animated-modal";
 
 export function NavbarMenu() {
   const navItems = [
@@ -19,6 +20,15 @@ export function NavbarMenu() {
     //   name: "Projects",
     //   link: "/#projects",
     // },
+    // {
+    //   name: "Testimonials",
+    //   link: "/#testimonials",
+    // },
+    // {
+    //   name: "Certifications",
+    //   link: "/#certifications",
+    // },
+    //
     // {
     //   name: "Blogs",
     //   link: "/blogs",
@@ -31,6 +41,8 @@ export function NavbarMenu() {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const { setOpen } = useModal();
+
   return (
     <div className="fixed w-full h-20 z-50 pt-4">
       <Navbar>
@@ -39,15 +51,11 @@ export function NavbarMenu() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            {" "}
             <NavbarButton
-              target="_blank"
-              variant="secondary"
-              href="https://1drv.ms/w/c/7768db99836e3a9a/QZo6boOZ22gggHdcCQAAAAAAXfO1iojOXuPGOw"
+              variant="primary"
+              as="button"
+              onClick={() => setOpen(true)}
             >
-              Resume
-            </NavbarButton>
-            <NavbarButton variant="primary" as="button">
               Contact
             </NavbarButton>
           </div>
@@ -59,7 +67,7 @@ export function NavbarMenu() {
             <NavbarLogo />
             <MobileNavToggle
               isOpen={isMobileMenuOpen}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              action={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             />
           </MobileNavHeader>
 
@@ -79,17 +87,11 @@ export function NavbarMenu() {
             ))}
             <div className="flex w-full flex-col gap-4">
               <NavbarButton
-                href="https://1drv.ms/w/c/7768db99836e3a9a/QZo6boOZ22gggHdcCQAAAAAAXfO1iojOXuPGOw"
-                target="_blank"
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
-              >
-                Resume
-              </NavbarButton>
-              <NavbarButton
-                href="#"
-                onClick={() => setIsMobileMenuOpen(false)}
+                as="button"
+                onClick={() => {
+                  setOpen(true);
+                  setIsMobileMenuOpen(false);
+                }}
                 variant="primary"
                 className="w-full"
               >

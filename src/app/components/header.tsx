@@ -1,7 +1,17 @@
 import { Container } from "@/components/container";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import Image from "next/image";
-import { Docker, Flutter, Golang, NextjsIcon, Nodejs, React, Tailwindcss, Typescript } from "./svgs";
+import {
+  Docker,
+  Flutter,
+  Golang,
+  NextjsIcon,
+  Nodejs,
+  React,
+  Tailwindcss,
+  Typescript,
+} from "./svgs";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 
 export function Header() {
   return (
@@ -18,6 +28,12 @@ export function Header() {
               I enjoy building websites and innovative reliable systems. I also
               like learning new tools that would make the job done.
             </p>
+            <HoverBorderGradient as="a" containerClassName="mt-6"
+              target="_blank"
+href="https://1drv.ms/w/c/7768db99836e3a9a/QZo6boOZ22gggHdcCQAAAAAAXfO1iojOXuPGOw"
+            >
+              Download Resume
+            </HoverBorderGradient>
             <TextGenerateEffect
               className="mt-6 font-bold text text-sm"
               words="Let me help you with your next project."
@@ -44,7 +60,6 @@ export function Header() {
         </div>
         <TechStack />
       </Container>
-
     </div>
   );
 }
@@ -55,17 +70,15 @@ export function TechStack() {
     <div className="flex flex-col gap-2 pt-14">
       <h2 className="text-2xl font-bold text-center">Tech Stack</h2>
       <div className="grid grid-cols-4 sm:grid-cols-8 gap-6 sm:w-xl m-auto">
-      <Typescript width={size} height={size}/>
-      <Tailwindcss width={size} height={size}/>
-      <React width={size} height={size}/>
-      <NextjsIcon width={size} height={size}/>
-      <Nodejs width={size} height={size}/>
-      <Flutter width={size} height={size}/>
-      <Golang width={size} height={size}/>
-      <Docker width={size} height={size}/>
+        <Typescript width={size} height={size} />
+        <Tailwindcss width={size} height={size} />
+        <React width={size} height={size} />
+        <NextjsIcon width={size} height={size} />
+        <Nodejs width={size} height={size} />
+        <Flutter width={size} height={size} />
+        <Golang width={size} height={size} />
+        <Docker width={size} height={size} />
       </div>
     </div>
   );
 }
-
-
