@@ -75,8 +75,8 @@ export function TechStack() {
         <React width={size} height={size} />
         <NextjsIcon width={size} height={size} />
         <Nodejs width={size} height={size} />
-        <Flutter width={size} height={size} />
         <Golang width={size} height={size} />
+        <Flutter width={size} height={size} />
         <Docker width={size} height={size} />
       </div>
     </div>
