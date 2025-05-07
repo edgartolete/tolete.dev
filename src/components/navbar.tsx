@@ -24,11 +24,10 @@ export function NavbarMenu() {
       name: "Testimonials",
       link: "/#testimonials",
     },
-    // {
-    //   name: "Certifications",
-    //   link: "/#certifications",
-    // },
-    //
+    {
+      name: "Certifications",
+      link: "/#certifications",
+    },
     // {
     //   name: "Blogs",
     //   link: "/blogs",

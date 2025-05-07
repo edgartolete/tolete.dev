@@ -4,6 +4,7 @@ import "./globals.css";
 import { NavbarMenu } from "@/components/navbar";
 import { Modal } from "@/components/ui/animated-modal";
 import { ContactModal } from "./components/modal";
+import { Toaster } from "sonner";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -34,6 +35,7 @@ export default function RootLayout({
           {children}
           <ContactModal />
         </Modal>
+        <Toaster />
       </body>
     </html>
   );

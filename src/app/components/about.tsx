@@ -11,7 +11,7 @@ export function About() {
     <Container className="py-20" id="about">
       <h2 className="font-bold text-center text-3xl"> About Me</h2>
       <p className="mt-6">
-        I am a web developer with {frontendYrsExp}+ years of experience,
+        I, Edgar Tolete is a web developer with {frontendYrsExp}+ years of experience,
         and &nbsp; {reactYrsExp}+ years of experience using React/NextJS
         framework. I graduated with a Bachelor&apos;s degree in Information
         Technology in 2013.

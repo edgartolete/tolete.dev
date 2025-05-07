@@ -16,6 +16,7 @@ import {
   useForm,
 } from "react-hook-form";
 import { CreateEmailResponse } from "resend";
+import { toast } from "sonner";
 
 type TFormData = {
   firstName: string;
@@ -26,19 +27,27 @@ type TFormData = {
 
 type TFormReq = TFormData;
 
-type TFormRes = CreateEmailResponse;
+type TFormRes = CreateEmailResponse[];
 
 export default function FormModal() {
   const { setOpen } = useModal();
-  const { trigger } = useMutation<TFormRes, TFormReq>("/api/send", {
-    onSuccess: ({ data, error }) => {
-      if (error || !data || (data && !data?.id)) {
-        console.log("# data", data);
+  const { trigger, isMutating } = useMutation<TFormRes, TFormReq>("/api/send", {
+    onSuccess: ([receiver, sender]) => {
+      if (
+        receiver.error ||
+        sender.error ||
+        !receiver.data?.id ||
+        !sender.data?.id
+      ) {
+        toast.error("Something went wrong, please try again later.");
+        console.error("# payload", { receiver, sender });
         return;
       }
+      toast.success("Message sent successfully!!! ✉️  🚀 🥳");
       setOpen(false);
     },
     onError: (error) => {
+      toast.error("Something went wrong, please try again later.");
       console.error("# error", error);
     },
   });
@@ -57,6 +66,7 @@ export default function FormModal() {
 
   const onError: SubmitErrorHandler<TFormData> = (error) => {
     console.error("# error", error);
+    toast.error("Something went wrong, please try again later.");
   };
 
   return (
@@ -115,7 +125,7 @@ export default function FormModal() {
               )}
             />
             <Button type="submit" className="mt-4 w-full">
-              Submit
+              {isMutating ? "Loading..." : "Submit"}
             </Button>
           </form>
         </ModalContent>
