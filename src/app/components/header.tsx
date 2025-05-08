@@ -34,6 +34,7 @@ export function Header() {
                 target="_blank"
                 className="pt-6"
                 prefetch={false}
+                aria-label="Learn more about Edgar Tolete on LinkedIn"
               >
                 <Linkedin width={44} height={44} />
               </Link>
