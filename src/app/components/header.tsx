@@ -1,17 +1,7 @@
 import { Container } from "@/components/container";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import Image from "next/image";
-import {
-  Docker,
-  Flutter,
-  Golang,
-  Linkedin,
-  NextjsIcon,
-  Nodejs,
-  React,
-  Tailwindcss,
-  Typescript,
-} from "./svgs";
+import { Linkedin } from "./svgs";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import Link from "next/link";
 
@@ -72,27 +62,7 @@ export function Header() {
             />
           </div>
         </div>
-        <TechStack />
       </Container>
-    </div>
-  );
-}
-
-export function TechStack() {
-  const size = 40;
-  return (
-    <div className="flex flex-col gap-2 pt-14">
-      <h2 className="text-2xl font-bold text-center">Tech Stack</h2>
-      <div className="grid grid-cols-4 sm:grid-cols-8 gap-6 sm:w-xl m-auto">
-        <Typescript width={size} height={size} />
-        <Tailwindcss width={size} height={size} />
-        <React width={size} height={size} />
-        <NextjsIcon width={size} height={size} />
-        <Nodejs width={size} height={size} />
-        <Golang width={size} height={size} />
-        <Flutter width={size} height={size} />
-        <Docker width={size} height={size} />
-      </div>
     </div>
   );
 }

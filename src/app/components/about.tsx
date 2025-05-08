@@ -1,6 +1,15 @@
 import { Container } from "@/components/container";
 import { differenceInYears } from "date-fns";
-
+import {
+  Docker,
+  Flutter,
+  Golang,
+  NextjsIcon,
+  Nodejs,
+  React,
+  Tailwindcss,
+  Typescript,
+} from "./svgs";
 const initialReactExp = new Date("February 20 2023");
 const initialFrontendExp = new Date("September 20 2020");
 const frontendYrsExp = differenceInYears(new Date(), initialFrontendExp);
@@ -11,10 +20,10 @@ export function About() {
     <Container className="py-20" id="about">
       <h2 className="font-bold text-center text-3xl"> About Me</h2>
       <p className="mt-6">
-        I, Edgar Tolete is a web developer with {frontendYrsExp}+ years of experience,
-        and &nbsp; {reactYrsExp}+ years of experience using React/NextJS
-        framework. I graduated with a Bachelor&apos;s degree in Information
-        Technology in 2013.
+        I, Edgar Tolete is a web developer with {frontendYrsExp}+ years of
+        experience, and &nbsp; {reactYrsExp}+ years of experience using
+        React/NextJS framework. I graduated with a Bachelor&apos;s degree in
+        Information Technology in 2013.
       </p>
 
       <p className="mt-6">
@@ -39,35 +48,26 @@ export function About() {
         constructive feedback as a tool for growth and always maintain a high
         level of professionalism in everything I do.
       </p>
-    {/* <Testimonials /> */}
-    {/*<Certifications /> */}
+      <TechStack />
     </Container>
   );
 }
 
-
-
-// function Testimonials(){
-//   return (
-//     <Container className="py-20" id="testimonials">
-//       <h3 className="font-bold text-start text-xl">Testimonials</h3>
-//       <p className="mt-6">
-//         I have completed the following certifications:
-//       </p>
-//
-//     </Container>
-//   );
-// }
-
-// function Certifications(){
-//   return (
-//     <Container className="py-20" id="certifications">
-//       <h3 className="font-bold text-start text-xl"> Certifications</h3>
-//       <p className="mt-6">
-//         I have completed the following certifications:
-//       </p>
-//
-//     </Container>
-//   );
-// }
-//
+function TechStack() {
+  const size = 40;
+  return (
+    <div className="flex flex-col gap-2 pt-14 pb-52">
+      <h2 className="text-2xl font-bold text-center">Tech Stack</h2>
+      <div className="grid grid-cols-4 sm:grid-cols-8 gap-6 sm:w-xl m-auto">
+        <Typescript width={size} height={size} />
+        <Tailwindcss width={size} height={size} />
+        <React width={size} height={size} />
+        <NextjsIcon width={size} height={size} />
+        <Nodejs width={size} height={size} />
+        <Golang width={size} height={size} />
+        <Flutter width={size} height={size} />
+        <Docker width={size} height={size} />
+      </div>
+    </div>
+  );
+}
