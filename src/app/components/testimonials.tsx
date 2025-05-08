@@ -45,24 +45,6 @@ export function Testimonials() {
       ),
     },
     {
-      name: "Rae Dominique A.",
-      avatar: "/testimonials/rae.webp",
-      content: (
-        <>
-          <p className="mb-4">
-            I am grateful working alongside with Edgar as a fellow developer on
-            several complex projects, and I can confidently say he brings an
-            exceptional level of professionalism and technical expertise to
-            everything he does. Edgar consistently demonstrated strong
-            problem-solving skills and a deep understanding of both development
-            and project management. His ability to balance hands-on development
-            with high-level decision-making made him a key contributor to our
-            team&apos;s success.
-          </p>
-        </>
-      ),
-    },
-    {
       name: "Kervy C.",
       avatar: "/testimonials/kervy.webp",
       content: (
@@ -114,6 +96,24 @@ export function Testimonials() {
             He’s not only technically strong but also understands the importance
             of communication, collaboration, and creating a positive work
             environment.
+          </p>
+        </>
+      ),
+    },
+    {
+      name: "Rae Dominique A.",
+      avatar: "/testimonials/rae.webp",
+      content: (
+        <>
+          <p className="mb-4">
+            I am grateful working alongside with Edgar as a fellow developer on
+            several complex projects, and I can confidently say he brings an
+            exceptional level of professionalism and technical expertise to
+            everything he does. Edgar consistently demonstrated strong
+            problem-solving skills and a deep understanding of both development
+            and project management. His ability to balance hands-on development
+            with high-level decision-making made him a key contributor to our
+            team&apos;s success.
           </p>
         </>
       ),

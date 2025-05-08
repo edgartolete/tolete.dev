@@ -16,14 +16,10 @@ import { useModal } from "./ui/animated-modal";
 
 export function NavbarMenu() {
   const navItems = [
-    {
-      name: "Projects",
-      link: "/#projects",
-    },
-    {
-      name: "Testimonials",
-      link: "/#testimonials",
-    },
+    // {
+    //   name: "Projects",
+    //   link: "/#projects",
+    // },
     //   name: "Blogs",
     //   link: "/blogs",
     // },
@@ -32,10 +28,14 @@ export function NavbarMenu() {
       link: "/#about",
     },
     {
-      name: "Certifications",
-      link: "/#certifications",
-    // {
+      name: "Testimonials",
+      link: "/#testimonials",
     },
+    // {
+    //   name: "Certifications",
+    //   link: "/#certifications",
+    // // {
+    // },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

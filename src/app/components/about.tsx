@@ -56,7 +56,7 @@ export function About() {
 function TechStack() {
   const size = 40;
   return (
-    <div className="flex flex-col gap-2 pt-14 pb-52">
+    <div className="flex flex-col gap-2 pt-20">
       <h2 className="text-2xl font-bold text-center">Tech Stack</h2>
       <div className="grid grid-cols-4 sm:grid-cols-8 gap-6 sm:w-xl m-auto">
         <Typescript width={size} height={size} />
