@@ -5,6 +5,7 @@ import {
   Docker,
   Flutter,
   Golang,
+  Linkedin,
   NextjsIcon,
   Nodejs,
   React,
@@ -12,6 +13,7 @@ import {
   Typescript,
 } from "./svgs";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import Link from "next/link";
 
 export function Header() {
   return (
@@ -28,12 +30,24 @@ export function Header() {
               I enjoy building websites and innovative reliable systems. I also
               like learning new tools that would make the job done.
             </p>
-            <HoverBorderGradient as="a" containerClassName="mt-6"
-              target="_blank"
-href="https://1drv.ms/w/c/7768db99836e3a9a/QZo6boOZ22gggHdcCQAAAAAAXfO1iojOXuPGOw"
-            >
-              Download Resume
-            </HoverBorderGradient>
+            <div className="flex flex-row gap-2">
+              <HoverBorderGradient
+                as="a"
+                containerClassName="mt-6"
+                target="_blank"
+                href="https://1drv.ms/w/c/7768db99836e3a9a/QZo6boOZ22gggHdcCQAAAAAAXfO1iojOXuPGOw"
+              >
+                Download Resume
+              </HoverBorderGradient>
+              <Link
+                href="https://www.linkedin.com/in/edgar-tolete/"
+                target="_blank"
+                className="pt-6"
+                prefetch={false}
+              >
+                <Linkedin width={44} height={44} />
+              </Link>
+            </div>
             <TextGenerateEffect
               className="mt-6 font-bold text text-sm"
               words="Let me help you with your next project."
