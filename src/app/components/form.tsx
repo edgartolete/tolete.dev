@@ -27,11 +27,12 @@ type TFormReq = TFormData;
 
 type TFormRes = CreateEmailResponse[];
 
-type WindowWithCaptcha = Window & typeof globalThis & {
-  onSubmit?: (token: string) => void;
-  onExpired?: () => void;
-  onError?: () => void;
-}
+type WindowWithCaptcha = Window &
+  typeof globalThis & {
+    onSubmit?: (token: string) => void;
+    onExpired?: () => void;
+    onError?: () => void;
+  };
 
 export default function FormModal() {
   const { setOpen } = useModal();
@@ -45,16 +46,16 @@ export default function FormModal() {
         !receiver.data?.id ||
         !sender.data?.id
       ) {
-        toast.error("Something went wrong, please try again later.");
-        console.error("# payload", { receiver, sender });
+        toast.error(
+          `Something went wrong, please try again later.Sender: ${sender.error}. Receiver: ${receiver.error}`,
+        );
         return;
       }
       toast.success("Message sent successfully!!! ✉️  🚀 🥳");
       setOpen(false);
     },
-    onError: (error) => {
+    onError: () => {
       toast.error("Something went wrong, please try again later.");
-      console.error("# error", error);
     },
   });
   const {
@@ -95,7 +96,7 @@ export default function FormModal() {
     };
     return () => {
       const script = document.querySelector(
-        `script[src="https://www.google.com/recaptcha/api.js"]`
+        `script[src="https://www.google.com/recaptcha/api.js"]`,
       );
       if (script) {
         script.remove();
@@ -103,7 +104,7 @@ export default function FormModal() {
       delete (window as WindowWithCaptcha).onSubmit;
       delete (window as WindowWithCaptcha).onExpired;
       delete (window as WindowWithCaptcha).onError;
-    }
+    };
   }, [setCaptchaValid]);
 
   return (

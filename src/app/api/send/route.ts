@@ -7,8 +7,17 @@ export type ResendPayload = {
   message: string;
 };
 
+const allowedOrigins = ["https://tolete.dev", "https://www.tolete.dev"];
+
 export async function POST(req: Request) {
   const data = await req.json();
+
+  const origin = req.headers.get("origin") ?? "";
+
+  if (!allowedOrigins.includes(origin)) {
+    const error = { error: "Cross origin not allow" };
+    return Response.json([error, error]);
+  }
 
   const { email: senderEmail, firstName, lastName, message } = data;
 
